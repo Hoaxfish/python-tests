@@ -50,3 +50,6 @@ def the_loop(co_x, co_y):
 
 #pygame.quit()
 #quit()
+
+if __name__ == "__main__":
+    main()
