@@ -17,22 +17,14 @@ CLOCK = pygame.time.Clock()
 GAME_DISPLAY = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT))
 pygame.display.set_caption('A JS to Py conversion')
 
-
-CAR_IMG = pygame.image.load('racecar.png')
+grid = {0, 0, 0, 0}
 
 def main():
     ''' what the fuck '''
-    co_x = (DISPLAY_WIDTH * 0.45)
-    co_y = (DISPLAY_HEIGHT * 0.8)
-
-    the_loop(co_x, co_y)
-
-def car(co_x, co_y):
-    ''' place the car on-screen '''
-    GAME_DISPLAY.blit(CAR_IMG, (co_x, co_y))
+    the_loop()
 
 
-def the_loop(co_x, co_y):
+def the_loop():
     ''' loops until exit '''
     crashed = False
 
@@ -41,9 +33,12 @@ def the_loop(co_x, co_y):
             if event.type == pygame.QUIT:
                 crashed = True
 
-        GAME_DISPLAY.fill(RED)
-        car(co_x, co_y)
+        GAME_DISPLAY.fill(WHITE)
+
+        pygame.draw.rect(GAME_DISPLAY, BLACK, [10, 10, 10, 10], 2)
+
         pygame.display.update()
+
         CLOCK.tick(60)
 
 # main()
